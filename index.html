@@ -7,6 +7,7 @@
 <title>Choi's Pantry | e-Transfer</title>
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -17,7 +18,7 @@
   --orange: #c9532f;
   --mustard: #e6ae3b;
   --sage: #a9b99d;
-  --muted: #6e7c73;
+  --muted: #748078;
 }
 
 body {
@@ -32,397 +33,652 @@ body {
 .page {
   position: relative;
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 44px 22px;
+
+  padding: 40px 22px;
 }
 
-/* -------------------------
-   ORGANIC CORNERS
-------------------------- */
+
+/* =========================
+   CORNER SHAPES
+========================= */
 
 .blob {
-  position: absolute;
+  position: fixed;
   z-index: 0;
   pointer-events: none;
 }
 
-.blob.green {
-  width: 430px;
-  height: 330px;
-  top: -145px;
-  left: -145px;
+.green {
+  width: 310px;
+  height: 220px;
+
+  top: -125px;
+  left: -125px;
+
   background: var(--green);
-  border-radius: 34% 66% 67% 33% / 42% 38% 62% 58%;
-  transform: rotate(-14deg);
+
+  border-radius:
+    35% 65% 62% 38% /
+    42% 35% 65% 58%;
+
+  transform: rotate(-12deg);
 }
 
-.blob.orange {
-  width: 390px;
-  height: 290px;
-  top: -120px;
-  right: -140px;
+.orange {
+  width: 285px;
+  height: 205px;
+
+  top: -115px;
+  right: -120px;
+
   background: var(--orange);
-  border-radius: 63% 37% 38% 62% / 46% 31% 69% 54%;
-  transform: rotate(12deg);
+
+  border-radius:
+    65% 35% 38% 62% /
+    42% 38% 62% 58%;
+
+  transform: rotate(11deg);
 }
 
-.blob.mustard {
-  width: 450px;
-  height: 320px;
-  bottom: -165px;
-  left: -175px;
+.mustard {
+  width: 315px;
+  height: 215px;
+
+  bottom: -135px;
+  left: -135px;
+
   background: var(--mustard);
-  border-radius: 41% 59% 69% 31% / 67% 42% 58% 33%;
-  transform: rotate(10deg);
+
+  border-radius:
+    40% 60% 68% 32% /
+    65% 42% 58% 35%;
+
+  transform: rotate(8deg);
 }
 
-.blob.sage {
-  width: 400px;
-  height: 300px;
-  bottom: -155px;
-  right: -155px;
+.sage {
+  width: 290px;
+  height: 205px;
+
+  bottom: -130px;
+  right: -125px;
+
   background: var(--sage);
-  border-radius: 61% 39% 35% 65% / 41% 61% 39% 59%;
-  transform: rotate(-9deg);
+
+  border-radius:
+    62% 38% 35% 65% /
+    42% 62% 38% 58%;
+
+  transform: rotate(-8deg);
 }
 
-/* -------------------------
+
+/* =========================
    MAIN CONTENT
-------------------------- */
+========================= */
 
 .card {
   position: relative;
   z-index: 2;
+
   width: min(92vw, 560px);
+
   text-align: center;
-  padding: 20px 0;
 }
 
-/* -------------------------
+
+/* =========================
    LOGO
-------------------------- */
-
-.logo-wrap {
-  margin-bottom: 14px;
-}
+========================= */
 
 .logo {
-  display: inline-flex;
-  align-items: flex-start;
-  justify-content: center;
-  font-family: Georgia, "Times New Roman", serif;
+  display: block;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   font-weight: 700;
-  font-size: clamp(50px, 8vw, 78px);
-  line-height: 0.95;
-  letter-spacing: -3px;
+
+  font-size: 66px;
+  line-height: 1;
+
+  letter-spacing: -4px;
+
+  white-space: nowrap;
 }
 
-.logo-word {
-  display: inline-block;
-}
 
-/* leaf apostrophe */
+/* =========================
+   LEAF APOSTROPHE
+========================= */
+
 .leaf-mark {
   position: relative;
+
   display: inline-block;
-  width: 24px;
-  height: 34px;
-  margin: 0 2px;
-  top: -8px;
+
+  width: 20px;
+  height: 32px;
+
+  margin: 0 1px;
+
+  top: -10px;
 }
 
 .leaf {
   position: absolute;
   display: block;
+
   background: var(--green);
 }
 
-.leaf.small {
-  width: 10px;
-  height: 18px;
-  left: 1px;
+.leaf-small {
+  width: 9px;
+  height: 17px;
+
+  left: 0;
   top: 13px;
-  border-radius: 100% 0 100% 0;
-  transform: rotate(-42deg);
+
+  border-radius:
+    100% 0 100% 0;
+
+  transform: rotate(-38deg);
 }
 
-.leaf.large {
-  width: 13px;
-  height: 23px;
+.leaf-large {
+  width: 12px;
+  height: 22px;
+
   right: 0;
   top: 0;
-  border-radius: 100% 0 100% 0;
-  transform: rotate(26deg);
+
+  border-radius:
+    100% 0 100% 0;
+
+  transform: rotate(25deg);
 }
+
+
+/* =========================
+   TAGLINE
+========================= */
 
 .tagline {
   display: flex;
+
   justify-content: center;
   align-items: center;
+
   gap: 14px;
-  margin-top: 22px;
+
+  margin-top: 25px;
+
   font-size: 12px;
+
   letter-spacing: 5px;
+
   white-space: nowrap;
 }
 
 .tagline::before,
 .tagline::after {
   content: "";
+
   width: 55px;
-  height: 1.5px;
+  height: 1px;
+
   background: var(--green);
 }
 
+
+/* =========================
+   LOCATION
+========================= */
+
 .location {
-  margin-top: 24px;
-  font-size: 12px;
+  margin-top: 22px;
+
+  font-size: 11px;
+
   letter-spacing: 5px;
 }
 
-/* -------------------------
-   PAYMENT AREA
-------------------------- */
+
+/* =========================
+   PAYMENT
+========================= */
 
 .payment {
-  margin-top: 82px;
+  margin-top: 80px;
 }
 
 .transfer-title {
-  font-size: 28px;
+  margin-bottom: 25px;
+
+  font-size: 27px;
+
   font-weight: 700;
-  margin-bottom: 26px;
 }
+
+
+/* =========================
+   EMAIL
+========================= */
 
 .email-box {
   display: flex;
+
+  width: 100%;
+
   overflow: hidden;
+
   background: white;
+
   border: 2px solid var(--green);
+
   border-radius: 18px;
-  box-shadow: 0 12px 28px rgba(21, 63, 49, 0.08);
+
+  box-shadow:
+    0 10px 25px
+    rgba(21, 63, 49, 0.08);
 }
 
 .email {
   flex: 1;
-  padding: 19px 16px;
-  font-size: 17px;
-  color: #222;
+
+  padding: 19px 12px;
+
   background: white;
+
+  color: #222;
+
+  font-size: 16px;
+
   white-space: nowrap;
 }
 
+
+/* =========================
+   COPY BUTTON
+========================= */
+
 .copy-btn {
-  border: 0;
+  min-width: 110px;
+
+  padding: 0 22px;
+
+  border: none;
+
   background: var(--green);
+
   color: white;
+
   font-size: 14px;
+
   font-weight: 800;
-  padding: 0 26px;
+
   cursor: pointer;
-  min-width: 112px;
 }
 
 .copy-btn:active {
-  background: #0d2f24;
+  background: #0d3025;
 }
 
+
+/* =========================
+   COPY MESSAGE
+========================= */
+
 .message {
-  min-height: 24px;
-  margin-top: 14px;
+  min-height: 25px;
+
+  margin-top: 13px;
+
   font-size: 14px;
+
   font-weight: 700;
 }
 
+
+/* =========================
+   AUTO DEPOSIT
+========================= */
+
 .autodeposit {
-  margin-top: 18px;
-  font-size: 14px;
+  margin-top: 14px;
+
   color: var(--muted);
+
+  font-size: 14px;
 }
 
-/* -------------------------
+
+/* =========================
    MOBILE
-------------------------- */
+========================= */
 
 @media (max-width: 600px) {
+
   .page {
     align-items: flex-start;
-    padding-top: 120px;
+
+    padding:
+      125px
+      22px
+      80px;
   }
+
 
   .card {
     width: 100%;
   }
 
+
   .logo {
-    font-size: 54px;
-    letter-spacing: -2.5px;
+    font-size: 46px;
+
+    letter-spacing: -3px;
+
+    white-space: nowrap;
   }
 
+
   .leaf-mark {
-    width: 21px;
-    height: 31px;
+    width: 17px;
+    height: 28px;
+
     top: -7px;
   }
 
+
+  .leaf-small {
+    width: 8px;
+    height: 15px;
+
+    top: 12px;
+  }
+
+
+  .leaf-large {
+    width: 11px;
+    height: 20px;
+  }
+
+
   .tagline {
     margin-top: 24px;
-    font-size: 10px;
-    letter-spacing: 3.6px;
-    gap: 10px;
+
+    gap: 9px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
   }
+
 
   .tagline::before,
   .tagline::after {
-    width: 42px;
+    width: 30px;
   }
+
 
   .location {
     margin-top: 20px;
-    font-size: 11px;
+
+    font-size: 10px;
+
     letter-spacing: 4px;
   }
 
+
   .payment {
-    margin-top: 70px;
+    margin-top: 75px;
   }
+
 
   .transfer-title {
+    margin-bottom: 25px;
+
     font-size: 25px;
-    margin-bottom: 24px;
   }
+
 
   .email {
+    padding: 18px 10px;
+
     font-size: 14px;
-    padding: 18px 12px;
   }
+
 
   .copy-btn {
-    min-width: 96px;
-    padding: 0 18px;
+    min-width: 95px;
+
+    padding: 0 15px;
   }
 
-  .blob.green {
-    width: 315px;
-    height: 240px;
-    top: -112px;
-    left: -125px;
+
+  /* Smaller organic shapes */
+
+  .green {
+    width: 230px;
+    height: 170px;
+
+    top: -105px;
+    left: -105px;
   }
 
-  .blob.orange {
-    width: 295px;
-    height: 220px;
-    top: -98px;
-    right: -120px;
+
+  .orange {
+    width: 215px;
+    height: 160px;
+
+    top: -100px;
+    right: -100px;
   }
 
-  .blob.mustard {
-    width: 320px;
-    height: 235px;
-    bottom: -135px;
-    left: -140px;
+
+  .mustard {
+    width: 240px;
+    height: 175px;
+
+    bottom: -115px;
+    left: -120px;
   }
 
-  .blob.sage {
-    width: 300px;
-    height: 220px;
-    bottom: -132px;
-    right: -135px;
+
+  .sage {
+    width: 225px;
+    height: 165px;
+
+    bottom: -110px;
+    right: -115px;
   }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="page">
 
+
+  <!-- Organic corner shapes -->
+
   <div class="blob green"></div>
+
   <div class="blob orange"></div>
+
   <div class="blob mustard"></div>
+
   <div class="blob sage"></div>
+
+
 
   <main class="card">
 
-    <div class="logo-wrap">
 
-      <div class="logo">
-        <span class="logo-word">Choi</span>
+    <!-- Logo -->
 
-        <span class="leaf-mark">
-          <span class="leaf small"></span>
-          <span class="leaf large"></span>
-        </span>
+    <div class="logo">
 
-        <span class="logo-word">s Pantry</span>
-      </div>
+      Choi<span class="leaf-mark">
 
-      <div class="tagline">
-        SMALL BATCH · FRESH FOOD
-      </div>
+        <span class="leaf leaf-small"></span>
 
-      <div class="location">
-        ST. JOHN'S, NL
-      </div>
+        <span class="leaf leaf-large"></span>
+
+      </span>s Pantry
 
     </div>
 
 
+
+    <!-- Tagline -->
+
+    <div class="tagline">
+
+      SMALL BATCH · FRESH FOOD
+
+    </div>
+
+
+
+    <!-- Location -->
+
+    <div class="location">
+
+      ST. JOHN'S, NL
+
+    </div>
+
+
+
+    <!-- Payment -->
+
     <section class="payment">
 
+
       <div class="transfer-title">
+
         e-Transfer
+
       </div>
+
+
 
       <div class="email-box">
 
+
         <div class="email">
+
           709kimchi@gmail.com
+
         </div>
 
-        <button class="copy-btn" id="copyButton" onclick="copyEmail()">
+
+        <button
+          class="copy-btn"
+          id="copyButton"
+          onclick="copyEmail()"
+        >
+
           COPY
+
         </button>
 
+
       </div>
 
-      <div class="message" id="message"></div>
+
+
+      <div
+        class="message"
+        id="message"
+      ></div>
+
+
 
       <div class="autodeposit">
+
         Auto-deposit enabled
+
       </div>
+
 
     </section>
 
+
   </main>
+
 
 </div>
 
 
+
 <script>
+
 async function copyEmail() {
-  const email = "709kimchi@gmail.com";
-  const button = document.getElementById("copyButton");
-  const message = document.getElementById("message");
+
+  const email =
+    "709kimchi@gmail.com";
+
+  const button =
+    document.getElementById(
+      "copyButton"
+    );
+
+  const message =
+    document.getElementById(
+      "message"
+    );
+
 
   try {
-    await navigator.clipboard.writeText(email);
 
-    button.innerText = "COPIED";
-    message.innerText = "✓ Email copied";
+    await navigator.clipboard.writeText(
+      email
+    );
+
+
+    button.innerText =
+      "COPIED";
+
+
+    message.innerText =
+      "✓ Email copied";
+
 
     setTimeout(() => {
-      button.innerText = "COPY";
-      message.innerText = "";
+
+      button.innerText =
+        "COPY";
+
+      message.innerText =
+        "";
+
     }, 1800);
 
+
   } catch {
-    message.innerText = email;
+
+    message.innerText =
+      "709kimchi@gmail.com";
+
   }
+
 }
+
 </script>
+
 
 </body>
 </html>
