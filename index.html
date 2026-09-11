@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Choi's Pantry | e-Transfer</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f6f1e7;
+      font-family: Arial, sans-serif;
+      color: #174b38;
+    }
+
+    .card {
+      width: min(90%, 420px);
+      text-align: center;
+      padding: 45px 25px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-family: Georgia, serif;
+      font-size: 42px;
+      color: #174b38;
+    }
+
+    .leaf {
+      color: #174b38;
+      font-size: 24px;
+      vertical-align: top;
+    }
+
+    .location {
+      margin-bottom: 45px;
+      font-size: 13px;
+      letter-spacing: 4px;
+    }
+
+    .transfer {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .email-box {
+      display: flex;
+      align-items: center;
+      background: white;
+      border: 2px solid #174b38;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .email {
+      flex: 1;
+      padding: 18px 12px;
+      font-size: 16px;
+      color: #222;
+    }
+
+    button {
+      border: none;
+      background: #174b38;
+      color: white;
+      padding: 19px 18px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:active {
+      background: #0f3527;
+    }
+
+    .note {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #637269;
+    }
+
+    #message {
+      height: 24px;
+      margin-top: 12px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <h1>
+      Choi<span class="leaf">🍃</span>s Pantry
+    </h1>
+
+    <div class="location">
+      ST. JOHN'S, NL
+    </div>
+
+    <div class="transfer">
+      e-Transfer
+    </div>
+
+    <div class="email-box">
+
+      <div class="email" id="email">
+        709kimchi@gmail.com
+      </div>
+
+      <button onclick="copyEmail()">
+        COPY
+      </button>
+
+    </div>
+
+    <div id="message"></div>
+
+    <div class="note">
+      Auto-deposit enabled
+    </div>
+
+  </div>
+
+
+  <script>
+    function copyEmail() {
+
+      const email = "709kimchi@gmail.com";
+
+      navigator.clipboard.writeText(email);
+
+      document.getElementById("message").innerText =
+        "✓ Email copied";
+
+    }
+  </script>
+
+</body>
+</html>
