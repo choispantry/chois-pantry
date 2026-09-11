@@ -48,9 +48,30 @@ body {
   min-height: 100svh;
 
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    max(25px, env(safe-area-inset-top))
+    0
+    max(35px, env(safe-area-inset-bottom));
 
   background: var(--cream);
+}
+
+
+/* =========================
+   CENTERED CONTENT BLOCK
+========================= */
+
+.content {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform: translateY(-3vh);
 }
 
 
@@ -60,49 +81,31 @@ body {
 
 .header {
   width: 100%;
-  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
 }
 
 .header img {
   display: block;
 
   width: 100%;
+  max-width: 1000px;
+
   height: auto;
-
-  margin: 0;
 }
 
 
 /* =========================
-   PAYMENT AREA
-========================= */
-
-.payment-area {
-  width: 100%;
-
-  flex: 1;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding:
-    30px
-    22px
-    max(50px, env(safe-area-inset-bottom));
-}
-
-
-/* =========================
-   PAYMENT CONTENT
+   PAYMENT SECTION
 ========================= */
 
 .payment {
-  width: min(88vw, 520px);
+  width: min(88%, 520px);
+
+  margin-top: 48px;
 
   text-align: center;
-
-  transform: translateY(-25px);
 }
 
 
@@ -111,7 +114,7 @@ body {
 ========================= */
 
 .payment-title {
-  margin: 0 0 28px;
+  margin: 0 0 26px;
 
   color: var(--green);
 
@@ -189,7 +192,7 @@ body {
 ========================= */
 
 .message {
-  height: 26px;
+  height: 25px;
 
   margin-top: 14px;
 
@@ -221,40 +224,52 @@ body {
 
   .page {
     min-height: 100svh;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+      max(20px, env(safe-area-inset-top))
+      0
+      max(35px, env(safe-area-inset-bottom));
+  }
+
+
+  .content {
+    width: 100%;
+
+    /*
+      Moves the whole banner + payment group
+      slightly upward from exact center.
+    */
+
+    transform: translateY(-2vh);
+  }
+
+
+  .header {
+    width: 100%;
   }
 
 
   .header img {
     width: 100%;
+
     height: auto;
   }
 
 
-  .payment-area {
-    flex: 1;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding:
-      20px
-      22px
-      max(55px, env(safe-area-inset-bottom));
-  }
-
-
   .payment {
-    width: 100%;
+    width: 88%;
 
     max-width: 390px;
 
-    transform: translateY(-35px);
+    margin-top: 50px;
   }
 
 
   .payment-title {
-    margin-bottom: 28px;
+    margin-bottom: 26px;
 
     font-size: 27px;
   }
@@ -277,6 +292,8 @@ body {
 
 
   .message {
+    height: 24px;
+
     margin-top: 13px;
   }
 
@@ -296,9 +313,8 @@ body {
 
 @media (max-width: 380px) {
 
-  .payment-area {
-    padding-left: 18px;
-    padding-right: 18px;
+  .payment {
+    width: 90%;
   }
 
 
@@ -325,23 +341,23 @@ body {
 
 <div class="page">
 
-
-  <!-- Choi's Pantry brand image -->
-
-  <header class="header">
-
-    <img
-      src="chois-pantry-header.png"
-      alt="Choi's Pantry — Small Batch Fresh Food, St. John's NL"
-    >
-
-  </header>
+  <div class="content">
 
 
+    <!-- Choi's Pantry header image -->
 
-  <!-- Payment section -->
+    <header class="header">
 
-  <div class="payment-area">
+      <img
+        src="chois-pantry-header.png"
+        alt="Choi's Pantry — Small Batch Fresh Food, St. John's NL"
+      >
+
+    </header>
+
+
+
+    <!-- Payment section -->
 
     <main class="payment">
 
@@ -387,8 +403,8 @@ body {
 
     </main>
 
-  </div>
 
+  </div>
 
 </div>
 
@@ -398,7 +414,8 @@ body {
 
 async function copyEmail() {
 
-  const email = "709kimchi@gmail.com";
+  const email =
+    "709kimchi@gmail.com";
 
   const button =
     document.getElementById("copyButton");
@@ -411,16 +428,20 @@ async function copyEmail() {
 
     await navigator.clipboard.writeText(email);
 
-    button.innerText = "COPIED";
+    button.innerText =
+      "COPIED";
 
-    message.innerText = "✓ Email copied";
+    message.innerText =
+      "✓ Email copied";
 
 
     setTimeout(() => {
 
-      button.innerText = "COPY";
+      button.innerText =
+        "COPY";
 
-      message.innerText = "";
+      message.innerText =
+        "";
 
     }, 1800);
 
