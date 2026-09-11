@@ -2,16 +2,14 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 
 <meta
   name="viewport"
-  content="width=device-width, initial-scale=1.0"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
 >
 
 <title>Choi's Pantry | e-Transfer</title>
-
 
 <style>
 
@@ -19,86 +17,112 @@
   box-sizing: border-box;
 }
 
+:root {
+  --cream: #f7f2e8;
+  --green: #153f31;
+  --muted: #748078;
+}
 
 html,
 body {
   margin: 0;
   padding: 0;
-
-  background: #f7f2e8;
-
-  color: #153f31;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  background: var(--cream);
+  color: var(--green);
+  font-family: Arial, Helvetica, sans-serif;
 }
-
 
 body {
   min-height: 100vh;
+  min-height: 100svh;
 }
 
+
+/* =========================
+   WHOLE PAGE
+========================= */
 
 .page {
   width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
 
-  background: #f7f2e8;
+  display: flex;
+  flex-direction: column;
+
+  background: var(--cream);
 }
 
 
-/* ==========================
-   CHOI'S PANTRY HEADER
-========================== */
+/* =========================
+   BRAND HEADER
+========================= */
 
 .header {
   width: 100%;
-
-  display: flex;
-  justify-content: center;
-
-  overflow: hidden;
+  flex-shrink: 0;
 }
-
 
 .header img {
   display: block;
 
   width: 100%;
-  max-width: 1200px;
-
   height: auto;
+
+  margin: 0;
 }
 
 
-/* ==========================
+/* =========================
    PAYMENT AREA
-========================== */
+========================= */
+
+.payment-area {
+  width: 100%;
+
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    30px
+    22px
+    max(50px, env(safe-area-inset-bottom));
+}
+
+
+/* =========================
+   PAYMENT CONTENT
+========================= */
 
 .payment {
-  width: min(88%, 520px);
-
-  margin: 55px auto 0;
+  width: min(88vw, 520px);
 
   text-align: center;
+
+  transform: translateY(-25px);
 }
 
 
-.payment-title {
-  margin: 0 0 25px;
+/* =========================
+   E-TRANSFER TITLE
+========================= */
 
-  color: #153f31;
+.payment-title {
+  margin: 0 0 28px;
+
+  color: var(--green);
 
   font-size: 28px;
   font-weight: 700;
 }
 
 
-/* ==========================
+/* =========================
    EMAIL + COPY
-========================== */
+========================= */
 
 .email-box {
   display: flex;
@@ -109,7 +133,7 @@ body {
 
   background: white;
 
-  border: 2px solid #153f31;
+  border: 2px solid var(--green);
 
   border-radius: 18px;
 
@@ -121,8 +145,11 @@ body {
 
 .email {
   flex: 1;
-
   min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   padding: 19px 10px;
 
@@ -141,7 +168,7 @@ body {
 
   border: 0;
 
-  background: #153f31;
+  background: var(--green);
 
   color: white;
 
@@ -157,55 +184,79 @@ body {
 }
 
 
-/* ==========================
-   COPY CONFIRMATION
-========================== */
+/* =========================
+   COPY MESSAGE
+========================= */
 
 .message {
-  height: 25px;
+  height: 26px;
 
   margin-top: 14px;
 
-  color: #153f31;
+  color: var(--green);
 
   font-size: 14px;
   font-weight: 700;
 }
 
 
-.autodeposit {
-  margin-top: 8px;
+/* =========================
+   AUTO-DEPOSIT
+========================= */
 
-  color: #748078;
+.autodeposit {
+  margin-top: 10px;
+
+  color: var(--muted);
 
   font-size: 14px;
 }
 
 
-/* ==========================
+/* =========================
    MOBILE
-========================== */
+========================= */
 
 @media (max-width: 600px) {
 
+  .page {
+    min-height: 100svh;
+  }
+
+
   .header img {
     width: 100%;
-
     height: auto;
   }
 
 
-  .payment {
-    width: 88%;
+  .payment-area {
+    flex: 1;
 
-    margin-top: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+      20px
+      22px
+      max(55px, env(safe-area-inset-bottom));
+  }
+
+
+  .payment {
+    width: 100%;
+
+    max-width: 390px;
+
+    transform: translateY(-35px);
   }
 
 
   .payment-title {
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 
-    font-size: 26px;
+    font-size: 27px;
   }
 
 
@@ -217,33 +268,65 @@ body {
 
 
   .copy-button {
-    min-width: 92px;
+    min-width: 95px;
 
     padding: 0 14px;
+
+    font-size: 14px;
+  }
+
+
+  .message {
+    margin-top: 13px;
   }
 
 
   .autodeposit {
+    margin-top: 8px;
+
     font-size: 14px;
   }
 
 }
 
-</style>
 
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  .payment-area {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+
+  .email {
+    font-size: 13px;
+  }
+
+
+  .copy-button {
+    min-width: 82px;
+
+    padding: 0 10px;
+
+    font-size: 13px;
+  }
+
+}
+
+</style>
 </head>
 
 
 <body>
 
-
 <div class="page">
 
 
-  <!--
-    This uses the actual Choi's Pantry
-    artwork uploaded to GitHub.
-  -->
+  <!-- Choi's Pantry brand image -->
 
   <header class="header">
 
@@ -256,60 +339,55 @@ body {
 
 
 
-  <!-- e-Transfer -->
+  <!-- Payment section -->
 
-  <main class="payment">
+  <div class="payment-area">
 
-
-    <div class="payment-title">
-
-      e-Transfer
-
-    </div>
+    <main class="payment">
 
 
+      <div class="payment-title">
+        e-Transfer
+      </div>
 
-    <div class="email-box">
 
 
-      <div class="email">
+      <div class="email-box">
 
-        709kimchi@gmail.com
+
+        <div class="email">
+          709kimchi@gmail.com
+        </div>
+
+
+        <button
+          class="copy-button"
+          id="copyButton"
+          onclick="copyEmail()"
+        >
+          COPY
+        </button>
+
 
       </div>
 
 
 
-      <button
-        class="copy-button"
-        id="copyButton"
-        onclick="copyEmail()"
-      >
-
-        COPY
-
-      </button>
-
-
-    </div>
+      <div
+        class="message"
+        id="message"
+      ></div>
 
 
 
-    <div
-      class="message"
-      id="message"
-    ></div>
+      <div class="autodeposit">
+        Auto-deposit enabled
+      </div>
 
 
+    </main>
 
-    <div class="autodeposit">
-
-      Auto-deposit enabled
-
-    </div>
-
-
-  </main>
+  </div>
 
 
 </div>
@@ -320,44 +398,29 @@ body {
 
 async function copyEmail() {
 
-  const email =
-    "709kimchi@gmail.com";
-
+  const email = "709kimchi@gmail.com";
 
   const button =
-    document.getElementById(
-      "copyButton"
-    );
-
+    document.getElementById("copyButton");
 
   const message =
-    document.getElementById(
-      "message"
-    );
+    document.getElementById("message");
 
 
   try {
 
-    await navigator.clipboard.writeText(
-      email
-    );
+    await navigator.clipboard.writeText(email);
 
+    button.innerText = "COPIED";
 
-    button.innerText =
-      "COPIED";
-
-
-    message.innerText =
-      "✓ Email copied";
+    message.innerText = "✓ Email copied";
 
 
     setTimeout(() => {
 
-      button.innerText =
-        "COPY";
+      button.innerText = "COPY";
 
-      message.innerText =
-        "";
+      message.innerText = "";
 
     }, 1800);
 
@@ -373,7 +436,5 @@ async function copyEmail() {
 
 </script>
 
-
 </body>
-
 </html>
