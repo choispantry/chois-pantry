@@ -1,461 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
->
-
-<title>Choi's Pantry | e-Transfer</title>
-
-<style>
-
-* {
-  box-sizing: border-box;
-}
-
-:root {
-  --cream: #f7f2e8;
-  --green: #153f31;
-  --muted: #748078;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--cream);
-  color: var(--green);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  min-height: 100vh;
-  min-height: 100svh;
-}
-
-
-/* =========================
-   WHOLE PAGE
-========================= */
-
-.page {
-  width: 100%;
-  min-height: 100vh;
-  min-height: 100svh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding:
-    max(25px, env(safe-area-inset-top))
-    0
-    max(35px, env(safe-area-inset-bottom));
-
-  background: var(--cream);
-}
-
-
-/* =========================
-   CENTERED CONTENT BLOCK
-========================= */
-
-.content {
-  width: 100%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  transform: translateY(-3vh);
-}
-
-
-/* =========================
-   BRAND HEADER
-========================= */
-
-.header {
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-}
-
-.header img {
-  display: block;
-
-  width: 100%;
-  max-width: 1000px;
-
-  height: auto;
-}
-
-
-/* =========================
-   PAYMENT SECTION
-========================= */
-
-.payment {
-  width: min(88%, 520px);
-
-  margin-top: 48px;
-
-  text-align: center;
-}
-
-
-/* =========================
-   E-TRANSFER TITLE
-========================= */
-
-.payment-title {
-  margin: 0 0 26px;
-
-  color: var(--green);
-
-  font-size: 28px;
-  font-weight: 700;
-}
-
-
-/* =========================
-   EMAIL + COPY
-========================= */
-
-.email-box {
-  display: flex;
-
-  width: 100%;
-
-  overflow: hidden;
-
-  background: white;
-
-  border: 2px solid var(--green);
-
-  border-radius: 18px;
-
-  box-shadow:
-    0 10px 28px
-    rgba(21, 63, 49, 0.08);
-}
-
-
-.email {
-  flex: 1;
-  min-width: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 19px 10px;
-
-  color: #222;
-
-  font-size: 16px;
-
-  white-space: nowrap;
-}
-
-
-.copy-button {
-  min-width: 105px;
-
-  padding: 0 20px;
-
-  border: 0;
-
-  background: var(--green);
-
-  color: white;
-
-  font-size: 14px;
-  font-weight: 800;
-
-  cursor: pointer;
-}
-
-
-.copy-button:active {
-  background: #0d3025;
-}
-
-
-/* =========================
-   COPY MESSAGE
-========================= */
-
-.message {
-  height: 25px;
-
-  margin-top: 14px;
-
-  color: var(--green);
-
-  font-size: 14px;
-  font-weight: 700;
-}
-
-
-/* =========================
-   AUTO-DEPOSIT
-========================= */
-
-.autodeposit {
-  margin-top: 10px;
-
-  color: var(--muted);
-
-  font-size: 14px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-  .page {
-    min-height: 100svh;
-
-    align-items: center;
-    justify-content: center;
-
-    padding:
-      max(20px, env(safe-area-inset-top))
-      0
-      max(35px, env(safe-area-inset-bottom));
-  }
-
-
-  .content {
-    width: 100%;
-
-    /*
-      Moves the whole banner + payment group
-      slightly upward from exact center.
-    */
-
-    transform: translateY(-2vh);
-  }
-
-
-  .header {
-    width: 100%;
-  }
-
-
-  .header img {
-    width: 100%;
-
-    height: auto;
-  }
-
-
-  .payment {
-    width: 88%;
-
-    max-width: 390px;
-
-    margin-top: 50px;
-  }
-
-
-  .payment-title {
-    margin-bottom: 26px;
-
-    font-size: 27px;
-  }
-
-
-  .email {
-    padding: 18px 8px;
-
-    font-size: 14px;
-  }
-
-
-  .copy-button {
-    min-width: 95px;
-
-    padding: 0 14px;
-
-    font-size: 14px;
-  }
-
-
-  .message {
-    height: 24px;
-
-    margin-top: 13px;
-  }
-
-
-  .autodeposit {
-    margin-top: 8px;
-
-    font-size: 14px;
-  }
-
-}
-
-
-/* =========================
-   VERY SMALL PHONES
-========================= */
-
-@media (max-width: 380px) {
-
-  .payment {
-    width: 90%;
-  }
-
-
-  .email {
-    font-size: 13px;
-  }
-
-
-  .copy-button {
-    min-width: 82px;
-
-    padding: 0 10px;
-
-    font-size: 13px;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Choi's Pantry | St. John's, NL</title>
+  <meta name="description"
+        content="Small-batch Korean food, freshly made in St. John's, Newfoundland.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cream: #F7F0E3;
+      --green: #173F35;
+      --orange: #C95F38;
+      --mustard: #D7A72E;
+      --sage: #9AA88B;
+      --text: #24352F;
+      --white: #FFFDF8;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding-bottom: 38px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Brand image already in your GitHub repository */
+    .brand-header {
+      width: 100%;
+      display: block;
+      margin: 28px auto 0;
+      padding: 0 18px;
+    }
+
+    .brand-header img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .content {
+      padding: 8px 27px 0;
+      text-align: center;
+    }
+
+    .welcome {
+      margin: 12px auto 0;
+      max-width: 440px;
+    }
+
+    .welcome h1 {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 26px;
+      line-height: 1.15;
+      font-weight: 600;
+    }
+
+    .welcome p {
+      margin: 0 auto;
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 400px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      margin: 25px auto 0;
+      max-width: 400px;
+    }
+
+    .social-button {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-height: 49px;
+      border: 1.5px solid var(--green);
+      border-radius: 14px;
+      color: var(--green);
+      background: transparent;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 650;
+      transition: 0.15s ease;
+    }
+
+    .social-button:active {
+      transform: scale(0.98);
+      background: rgba(23, 63, 53, 0.07);
+    }
+
+    .social-icon {
+      width: 19px;
+      height: 19px;
+      display: block;
+    }
+
+    .divider {
+      width: 45px;
+      height: 2px;
+      background: var(--mustard);
+      border: 0;
+      margin: 29px auto 25px;
+    }
+
+    .payment h2 {
+      margin: 0 0 6px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--green);
+      font-size: 23px;
+      font-weight: 600;
+    }
+
+    .payment-intro {
+      margin: 0 0 13px;
+      font-size: 13px;
+      opacity: 0.72;
+    }
+
+    .email-box {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid rgba(23, 63, 53, 0.16);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(30, 50, 40, 0.06);
+    }
+
+    .email {
+      flex: 1;
+      padding: 17px 10px 17px 16px;
+      font-size: 15px;
+      text-align: left;
+      white-space: nowrap;
+      color: var(--text);
+    }
+
+    .copy-button {
+      align-self: stretch;
+      min-width: 82px;
+      border: 0;
+      border-left: 1px solid rgba(23, 63, 53, 0.12);
+      background: var(--green);
+      color: white;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+    }
+
+    .copy-button:active {
+      opacity: 0.88;
+    }
+
+    .copied-message {
+      min-height: 20px;
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .autodeposit {
+      margin: 1px 0 0;
+      font-size: 12px;
+      opacity: 0.62;
+    }
+
+    .footer {
+      margin-top: 34px;
+      text-align: center;
+      color: var(--green);
+      font-size: 11px;
+      opacity: 0.58;
+      letter-spacing: 0.3px;
+    }
+
+    /* subtle brand decoration */
+    .blob-left {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: var(--orange);
+      border-radius: 55% 45% 60% 40%;
+      left: -72px;
+      top: 51%;
+      opacity: 0.95;
+      z-index: -1;
+    }
+
+    .blob-right {
+      position: absolute;
+      width: 115px;
+      height: 115px;
+      background: var(--sage);
+      border-radius: 45% 55% 42% 58%;
+      right: -86px;
+      top: 66%;
+      opacity: 0.9;
+      z-index: -1;
+    }
+
+    @media (min-width: 600px) {
+      .page {
+        padding-top: 18px;
+      }
+
+      .content {
+        padding-left: 45px;
+        padding-right: 45px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-<div class="page">
+  <main class="page">
 
-  <div class="content">
+    <div class="blob-left"></div>
+    <div class="blob-right"></div>
 
-
-    <!-- Choi's Pantry header image -->
-
-    <header class="header">
-
-      <img
-        src="chois-pantry-header.png"
-        alt="Choi's Pantry — Small Batch Fresh Food, St. John's NL"
-      >
-
+    <header class="brand-header">
+      <img src="chois-pantry-header.png"
+           alt="Choi's Pantry - Small Batch Fresh Food, St. John's NL">
     </header>
 
+    <div class="content">
+
+      <section class="welcome">
+
+        <h1>Welcome to Choi’s Pantry!</h1>
+
+        <p>
+          Small-batch Korean food, freshly made in St. John’s, NL.
+          From kimchi and sauces to freshly pressed sesame oil and
+          Korean treats, we’re excited to share a little taste of
+          Korea with our community.
+        </p>
+
+      </section>
 
 
-    <!-- Payment section -->
+      <section class="socials">
 
-    <main class="payment">
+        <a class="social-button"
+           href="https://www.instagram.com/chois_pantry/"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <svg class="social-icon" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor"
+               stroke-width="1.8">
+            <rect x="3" y="3" width="18" height="18"
+                  rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1"
+                    fill="currentColor" stroke="none"></circle>
+          </svg>
+
+          Instagram
+        </a>
 
 
-      <div class="payment-title">
-        e-Transfer
-      </div>
+        <a class="social-button"
+           href="https://www.facebook.com/profile.php?id=61594428864385"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <svg class="social-icon"
+               viewBox="0 0 24 24"
+               fill="currentColor">
+
+            <path d="M13.7 21v-8h2.7l.4-3h-3.1V8.1
+                     c0-.9.3-1.5 1.6-1.5H17V4
+                     c-.3 0-1.3-.1-2.4-.1
+                     -2.4 0-4 1.4-4 4.1v2H8v3h2.6v8h3.1z">
+            </path>
+
+          </svg>
+
+          Facebook
+        </a>
+
+      </section>
 
 
+      <hr class="divider">
 
-      <div class="email-box">
 
+      <section class="payment">
 
-        <div class="email">
-          709kimchi@gmail.com
+        <h2>e-Transfer</h2>
+
+        <p class="payment-intro">
+          Tap COPY, then paste the email into your banking app.
+        </p>
+
+        <div class="email-box">
+
+          <div class="email">
+            709kimchi@gmail.com
+          </div>
+
+          <button
+            class="copy-button"
+            id="copyButton"
+            onclick="copyEmail()">
+            COPY
+          </button>
+
         </div>
 
+        <div class="copied-message" id="copiedMessage"></div>
 
-        <button
-          class="copy-button"
-          id="copyButton"
-          onclick="copyEmail()"
-        >
-          COPY
-        </button>
+        <p class="autodeposit">
+          Auto-deposit enabled
+        </p>
 
-
-      </div>
+      </section>
 
 
+      <footer class="footer">
+        CHOI’S PANTRY · ST. JOHN’S, NEWFOUNDLAND
+      </footer>
 
-      <div
-        class="message"
-        id="message"
-      ></div>
+    </div>
 
-
-
-      <div class="autodeposit">
-        Auto-deposit enabled
-      </div>
+  </main>
 
 
-    </main>
+  <script>
+    function copyEmail() {
 
+      const email = "709kimchi@gmail.com";
+      const button = document.getElementById("copyButton");
+      const message = document.getElementById("copiedMessage");
 
-  </div>
+      navigator.clipboard.writeText(email).then(function() {
 
-</div>
+        button.textContent = "COPIED ✓";
+        message.textContent = "✓ Email copied";
 
+        setTimeout(function() {
+          button.textContent = "COPY";
+          message.textContent = "";
+        }, 2200);
 
+      }).catch(function() {
 
-<script>
+        const textarea = document.createElement("textarea");
+        textarea.value = email;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
 
-async function copyEmail() {
+        button.textContent = "COPIED ✓";
+        message.textContent = "✓ Email copied";
 
-  const email =
-    "709kimchi@gmail.com";
+        setTimeout(function() {
+          button.textContent = "COPY";
+          message.textContent = "";
+        }, 2200);
 
-  const button =
-    document.getElementById("copyButton");
-
-  const message =
-    document.getElementById("message");
-
-
-  try {
-
-    await navigator.clipboard.writeText(email);
-
-    button.innerText =
-      "COPIED";
-
-    message.innerText =
-      "✓ Email copied";
-
-
-    setTimeout(() => {
-
-      button.innerText =
-        "COPY";
-
-      message.innerText =
-        "";
-
-    }, 1800);
-
-
-  } catch {
-
-    message.innerText =
-      "709kimchi@gmail.com";
-
-  }
-
-}
-
-</script>
+      });
+    }
+  </script>
 
 </body>
 </html>
