@@ -5,14 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Choi's Pantry | St. John's, NL</title>
-
-  <meta
-    name="description"
-    content="Small-batch Korean food, freshly made in St. John's, Newfoundland."
-  >
+  <meta name="description"
+        content="Small-batch Korean food, freshly made in St. John's, Newfoundland.">
 
   <style>
-
     * {
       box-sizing: border-box;
     }
@@ -20,15 +16,12 @@
     :root {
       --cream: #F7F0E3;
       --green: #173F35;
-      --orange: #C95F38;
       --mustard: #D7A72E;
-      --sage: #9AA88B;
       --text: #24352F;
       --white: #FFFDF8;
     }
 
-    html,
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       background: var(--cream);
@@ -46,84 +39,71 @@
       max-width: 560px;
       margin: 0 auto;
       min-height: 100vh;
-      padding-bottom: 40px;
-      position: relative;
-      overflow: hidden;
+      padding: 48px 0 40px;
     }
 
+    /* WELCOME */
 
-    /* -------------------------
-       CHOI'S PANTRY HEADER
-       ------------------------- */
-
-    .brand-header {
-      width: 100%;
-      display: block;
-      margin: 28px auto 0;
-      padding: 0 18px;
-    }
-
-    .brand-header img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-
-    /* -------------------------
-       MAIN CONTENT
-       ------------------------- */
-
-    .content {
-      padding: 8px 27px 0;
+    .welcome-title {
+      margin: 0 0 20px;
       text-align: center;
-    }
-
-
-    /* -------------------------
-       WELCOME
-       ------------------------- */
-
-    .welcome {
-      margin: 12px auto 0;
-      max-width: 440px;
-    }
-
-    .welcome h1 {
-      margin: 0 0 17px;
       color: var(--green);
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 27px;
-      line-height: 1.15;
+      font-size: 29px;
+      line-height: 1.1;
       font-weight: 600;
     }
 
-    .welcome p {
+    /* BRAND BANNER */
+
+    .brand-header {
+      width: 100%;
+      padding: 0 18px;
       margin: 0 auto;
-      max-width: 400px;
+    }
+
+    .brand-header img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* CONTENT */
+
+    .content {
+      padding: 0 27px;
+      text-align: center;
+    }
+
+    /* INTRO */
+
+    .intro {
+      max-width: 420px;
+      margin: 26px auto 0;
+    }
+
+    .intro p {
+      margin: 0;
       font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.58;
+      font-weight: 400;
     }
 
-    .welcome-second {
-      margin-top: 13px !important;
+    .intro .second {
+      margin-top: 13px;
     }
 
-
-    /* -------------------------
-       SOCIAL MEDIA
-       ------------------------- */
+    /* SOCIAL BUTTONS */
 
     .socials {
       display: flex;
       gap: 10px;
-      margin: 25px auto 0;
       max-width: 400px;
+      margin: 26px auto 0;
     }
 
     .social-button {
       flex: 1;
-
       display: flex;
       justify-content: center;
       align-items: center;
@@ -138,11 +118,8 @@
       background: transparent;
 
       text-decoration: none;
-
       font-size: 14px;
       font-weight: 650;
-
-      transition: 0.15s ease;
     }
 
     .social-button:active {
@@ -156,48 +133,44 @@
       display: block;
     }
 
-
-    /* -------------------------
-       DIVIDER
-       ------------------------- */
+    /* DIVIDER */
 
     .divider {
       width: 45px;
       height: 2px;
-
-      background: var(--mustard);
-
       border: 0;
-
-      margin: 29px auto 25px;
+      background: var(--mustard);
+      margin: 31px auto 25px;
     }
 
+    /* PAYMENT */
 
-    /* -------------------------
-       E-TRANSFER
-       ------------------------- */
+    .payment {
+      max-width: 420px;
+      margin: 0 auto;
+    }
 
     .payment h2 {
-      margin: 0 0 6px;
-
-      font-family: Georgia, "Times New Roman", serif;
+      margin: 0 0 10px;
 
       color: var(--green);
 
-      font-size: 23px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      line-height: 1.2;
       font-weight: 600;
     }
 
     .payment-intro {
-      margin: 0 0 13px;
+      margin: 0 auto 15px;
+      max-width: 390px;
 
       font-size: 13px;
-
-      opacity: 0.72;
+      line-height: 1.45;
+      color: #66716C;
     }
 
-
-    /* EMAIL BOX */
+    /* EMAIL */
 
     .email-box {
       display: flex;
@@ -205,55 +178,42 @@
 
       width: 100%;
       max-width: 400px;
-
       margin: 0 auto;
 
       background: var(--white);
 
       border: 1px solid rgba(23, 63, 53, 0.16);
-
       border-radius: 14px;
 
       overflow: hidden;
 
-      box-shadow:
-        0 4px 15px rgba(30, 50, 40, 0.06);
+      box-shadow: 0 4px 15px rgba(30, 50, 40, 0.06);
     }
 
     .email {
       flex: 1;
+      min-width: 0;
 
-      padding: 17px 10px 17px 16px;
-
-      font-size: 15px;
-
-      text-align: left;
-
-      white-space: nowrap;
+      padding: 17px 8px 17px 16px;
 
       color: var(--text);
+      font-size: 15px;
+      text-align: left;
+      white-space: nowrap;
     }
-
-
-    /* COPY BUTTON */
 
     .copy-button {
       align-self: stretch;
-
       min-width: 82px;
 
       border: 0;
-
-      border-left:
-        1px solid rgba(23, 63, 53, 0.12);
+      border-left: 1px solid rgba(23, 63, 53, 0.12);
 
       background: var(--green);
-
       color: white;
 
       font-size: 12px;
       font-weight: 750;
-
       letter-spacing: 0.5px;
 
       cursor: pointer;
@@ -263,109 +223,68 @@
       opacity: 0.88;
     }
 
-
-    /* COPIED MESSAGE */
-
     .copied-message {
-      min-height: 20px;
-
-      margin-top: 8px;
-
-      font-size: 12px;
+      min-height: 19px;
+      margin-top: 7px;
 
       color: var(--green);
-
+      font-size: 12px;
       font-weight: 600;
     }
 
     .autodeposit {
-      margin: 1px 0 0;
-
+      margin: 0;
+      color: #7C8781;
       font-size: 12px;
-
-      opacity: 0.62;
     }
 
-
-    /* -------------------------
-       FOOTER
-       ------------------------- */
+    /* FOOTER */
 
     .footer {
       margin-top: 34px;
 
-      text-align: center;
-
       color: var(--green);
 
-      font-size: 11px;
+      font-size: 10px;
+      letter-spacing: 0.5px;
 
-      opacity: 0.58;
-
-      letter-spacing: 0.3px;
+      text-align: center;
+      opacity: 0.5;
     }
 
+    /* SMALL PHONES */
 
-    /* -------------------------
-       DECORATION
-       ------------------------- */
-
-    .blob-left {
-      position: absolute;
-
-      width: 100px;
-      height: 100px;
-
-      background: var(--orange);
-
-      border-radius:
-        55% 45% 60% 40%;
-
-      left: -72px;
-      top: 51%;
-
-      opacity: 0.95;
-
-      z-index: -1;
-    }
-
-    .blob-right {
-      position: absolute;
-
-      width: 115px;
-      height: 115px;
-
-      background: var(--sage);
-
-      border-radius:
-        45% 55% 42% 58%;
-
-      right: -86px;
-      top: 66%;
-
-      opacity: 0.9;
-
-      z-index: -1;
-    }
-
-
-    /* -------------------------
-       DESKTOP
-       ------------------------- */
-
-    @media (min-width: 600px) {
-
+    @media (max-width: 390px) {
       .page {
-        padding-top: 18px;
+        padding-top: 38px;
+      }
+
+      .welcome-title {
+        font-size: 27px;
+        margin-bottom: 18px;
       }
 
       .content {
-        padding-left: 45px;
-        padding-right: 45px;
+        padding-left: 22px;
+        padding-right: 22px;
       }
 
+      .intro p {
+        font-size: 14px;
+      }
+
+      .email {
+        font-size: 14px;
+      }
     }
 
+    /* DESKTOP */
+
+    @media (min-width: 600px) {
+      .page {
+        padding-top: 60px;
+      }
+    }
   </style>
 </head>
 
@@ -374,36 +293,27 @@
 
   <main class="page">
 
+    <!-- WELCOME -->
 
-    <div class="blob-left"></div>
+    <h1 class="welcome-title">
+      Welcome to
+    </h1>
 
-    <div class="blob-right"></div>
 
-
-    <!-- BRAND HEADER -->
+    <!-- CHOI'S PANTRY BRAND -->
 
     <header class="brand-header">
-
       <img
         src="chois-pantry-header.png"
-        alt="Choi's Pantry - Small Batch Fresh Food, St. John's NL"
-      >
-
+        alt="Choi's Pantry - Small Batch Fresh Food, St. John's NL">
     </header>
-
 
 
     <div class="content">
 
+      <!-- ABOUT -->
 
-      <!-- WELCOME -->
-
-      <section class="welcome">
-
-        <h1>
-          Welcome to<br>
-          Choi’s Pantry!
-        </h1>
+      <section class="intro">
 
         <p>
           Small-batch Korean food, freshly made in St. John’s, NL.
@@ -411,7 +321,7 @@
           and Korean treats.
         </p>
 
-        <p class="welcome-second">
+        <p class="second">
           We’re excited to share a little taste of Korea
           with our community.
         </p>
@@ -419,28 +329,22 @@
       </section>
 
 
-
       <!-- SOCIAL MEDIA -->
 
       <section class="socials">
-
-
-        <!-- INSTAGRAM -->
 
         <a
           class="social-button"
           href="https://www.instagram.com/chois_pantry/"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
 
           <svg
             class="social-icon"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="1.8"
-          >
+            stroke-width="1.8">
 
             <rect
               x="3"
@@ -467,28 +371,21 @@
           </svg>
 
           Instagram
-
         </a>
 
-
-
-        <!-- FACEBOOK -->
 
         <a
           class="social-button"
           href="https://www.facebook.com/profile.php?id=61594428864385"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
 
           <svg
             class="social-icon"
             viewBox="0 0 24 24"
-            fill="currentColor"
-          >
+            fill="currentColor">
 
-            <path
-              d="M13.7 21v-8h2.7l.4-3h-3.1V8.1
+            <path d="M13.7 21v-8h2.7l.4-3h-3.1V8.1
               c0-.9.3-1.5 1.6-1.5H17V4
               c-.3 0-1.3-.1-2.4-.1
               -2.4 0-4 1.4-4 4.1v2H8v3h2.6v8h3.1z">
@@ -497,15 +394,12 @@
           </svg>
 
           Facebook
-
         </a>
 
       </section>
 
 
-
       <hr class="divider">
-
 
 
       <!-- E-TRANSFER -->
@@ -517,7 +411,7 @@
         </h2>
 
         <p class="payment-intro">
-          Tap COPY, then paste the email into your banking app.
+          Copy our email and paste it into your banking app.
         </p>
 
 
@@ -530,8 +424,7 @@
           <button
             class="copy-button"
             id="copyButton"
-            onclick="copyEmail()"
-          >
+            onclick="copyEmail()">
             COPY
           </button>
 
@@ -551,28 +444,18 @@
       </section>
 
 
-
-      <!-- FOOTER -->
-
       <footer class="footer">
-
         CHOI’S PANTRY · ST. JOHN’S, NEWFOUNDLAND
-
       </footer>
-
 
     </div>
 
   </main>
 
 
-
   <script>
 
-    function copyEmail() {
-
-      const email =
-        "709kimchi@gmail.com";
+    function showCopied() {
 
       const button =
         document.getElementById("copyButton");
@@ -580,73 +463,59 @@
       const message =
         document.getElementById("copiedMessage");
 
+      button.textContent = "COPIED ✓";
+      message.textContent = "✓ Email copied";
 
-      navigator.clipboard
-        .writeText(email)
-        .then(function() {
-
-          button.textContent =
-            "COPIED ✓";
-
-          message.textContent =
-            "✓ Email copied";
+      setTimeout(function() {
+        button.textContent = "COPY";
+        message.textContent = "";
+      }, 2200);
+    }
 
 
-          setTimeout(function() {
+    function copyEmail() {
 
-            button.textContent =
-              "COPY";
+      const email = "709kimchi@gmail.com";
 
-            message.textContent =
-              "";
+      if (navigator.clipboard && window.isSecureContext) {
 
-          }, 2200);
+        navigator.clipboard
+          .writeText(email)
+          .then(showCopied)
+          .catch(fallbackCopy);
 
-        })
+      } else {
 
-        .catch(function() {
+        fallbackCopy();
 
-
-          const textarea =
-            document.createElement("textarea");
-
-          textarea.value =
-            email;
-
-          document.body
-            .appendChild(textarea);
-
-          textarea.select();
-
-          document.execCommand("copy");
-
-          document.body
-            .removeChild(textarea);
+      }
+    }
 
 
-          button.textContent =
-            "COPIED ✓";
+    function fallbackCopy() {
 
-          message.textContent =
-            "✓ Email copied";
+      const textarea =
+        document.createElement("textarea");
 
+      textarea.value =
+        "709kimchi@gmail.com";
 
-          setTimeout(function() {
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
 
-            button.textContent =
-              "COPY";
+      document.body.appendChild(textarea);
 
-            message.textContent =
-              "";
+      textarea.focus();
+      textarea.select();
 
-          }, 2200);
+      document.execCommand("copy");
 
-        });
+      document.body.removeChild(textarea);
 
+      showCopied();
     }
 
   </script>
-
 
 </body>
 </html>
