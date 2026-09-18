@@ -19,6 +19,7 @@
       --mustard: #D7A72E;
       --text: #24352F;
       --white: #FFFDF8;
+      --muted: #7C8781;
     }
 
     html, body {
@@ -39,13 +40,13 @@
       max-width: 560px;
       margin: 0 auto;
       min-height: 100vh;
-      padding: 48px 0 40px;
+      padding: 44px 0 30px;
     }
 
     /* WELCOME */
 
     .welcome-title {
-      margin: 0 0 20px;
+      margin: 0 0 14px;
       text-align: center;
       color: var(--green);
       font-family: Georgia, "Times New Roman", serif;
@@ -68,7 +69,7 @@
       height: auto;
     }
 
-    /* CONTENT */
+    /* MAIN CONTENT */
 
     .content {
       padding: 0 27px;
@@ -79,7 +80,7 @@
 
     .intro {
       max-width: 420px;
-      margin: 26px auto 0;
+      margin: 21px auto 0;
     }
 
     .intro p {
@@ -90,7 +91,7 @@
     }
 
     .intro .second {
-      margin-top: 13px;
+      margin-top: 12px;
     }
 
     /* SOCIAL BUTTONS */
@@ -99,7 +100,7 @@
       display: flex;
       gap: 10px;
       max-width: 400px;
-      margin: 26px auto 0;
+      margin: 24px auto 0;
     }
 
     .social-button {
@@ -120,6 +121,8 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 650;
+
+      transition: 0.15s ease;
     }
 
     .social-button:active {
@@ -140,10 +143,10 @@
       height: 2px;
       border: 0;
       background: var(--mustard);
-      margin: 31px auto 25px;
+      margin: 28px auto 23px;
     }
 
-    /* PAYMENT */
+    /* E-TRANSFER */
 
     .payment {
       max-width: 420px;
@@ -151,7 +154,7 @@
     }
 
     .payment h2 {
-      margin: 0 0 10px;
+      margin: 0 0 9px;
 
       color: var(--green);
 
@@ -162,15 +165,16 @@
     }
 
     .payment-intro {
-      margin: 0 auto 15px;
-      max-width: 390px;
+      margin: 0 auto 14px;
+      max-width: 400px;
 
       font-size: 13px;
-      line-height: 1.45;
+      line-height: 1.4;
       color: #66716C;
+      white-space: nowrap;
     }
 
-    /* EMAIL */
+    /* EMAIL BOX */
 
     .email-box {
       display: flex;
@@ -202,6 +206,8 @@
       white-space: nowrap;
     }
 
+    /* COPY BUTTON */
+
     .copy-button {
       align-self: stretch;
       min-width: 82px;
@@ -224,8 +230,8 @@
     }
 
     .copied-message {
-      min-height: 19px;
-      margin-top: 7px;
+      min-height: 18px;
+      margin-top: 6px;
 
       color: var(--green);
       font-size: 12px;
@@ -234,34 +240,22 @@
 
     .autodeposit {
       margin: 0;
-      color: #7C8781;
+
+      color: var(--muted);
       font-size: 12px;
-    }
-
-    /* FOOTER */
-
-    .footer {
-      margin-top: 34px;
-
-      color: var(--green);
-
-      font-size: 10px;
-      letter-spacing: 0.5px;
-
-      text-align: center;
-      opacity: 0.5;
     }
 
     /* SMALL PHONES */
 
     @media (max-width: 390px) {
+
       .page {
-        padding-top: 38px;
+        padding-top: 36px;
       }
 
       .welcome-title {
         font-size: 27px;
-        margin-bottom: 18px;
+        margin-bottom: 12px;
       }
 
       .content {
@@ -276,18 +270,22 @@
       .email {
         font-size: 14px;
       }
+
+      .payment-intro {
+        font-size: 12px;
+      }
     }
 
     /* DESKTOP */
 
     @media (min-width: 600px) {
       .page {
-        padding-top: 60px;
+        padding-top: 52px;
       }
     }
+
   </style>
 </head>
-
 
 <body>
 
@@ -300,18 +298,20 @@
     </h1>
 
 
-    <!-- CHOI'S PANTRY BRAND -->
+    <!-- BRAND -->
 
     <header class="brand-header">
+
       <img
         src="chois-pantry-header.png"
         alt="Choi's Pantry - Small Batch Fresh Food, St. John's NL">
+
     </header>
 
 
     <div class="content">
 
-      <!-- ABOUT -->
+      <!-- INTRO -->
 
       <section class="intro">
 
@@ -443,11 +443,6 @@
 
       </section>
 
-
-      <footer class="footer">
-        CHOI’S PANTRY · ST. JOHN’S, NEWFOUNDLAND
-      </footer>
-
     </div>
 
   </main>
@@ -497,8 +492,7 @@
       const textarea =
         document.createElement("textarea");
 
-      textarea.value =
-        "709kimchi@gmail.com";
+      textarea.value = "709kimchi@gmail.com";
 
       textarea.style.position = "fixed";
       textarea.style.opacity = "0";
